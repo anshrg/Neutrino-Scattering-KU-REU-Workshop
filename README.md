@@ -1,2 +1,11 @@
 # Neutrino Scattering KU REU Workshop
- KU Woskhop Analyzing Radio Signal Volume Scattering from Neutrino Event
+*Problem outlined by Dr. Dave Z. Besson, Physics Professor at the University of Kansas. Produced as part of work in the Summer 2023 KU Physics and Astronomy REU Program.*
+
+-----
+This scenario analyzes a radio signal produced in antarctic ice from a neturino detection event. A high energy neutrino has an astronomically small probability to interact with a given particle. A common description is that a neutrino could be expected to pass through a lightyear of lead without interacting with a single atom. Neutrino detectors in Antarctica use a huge ice sheet to act as a detector surface. If a high-energy neutrino interacts with a molecule of ice, the collision will generate a spray of particles which will produce Cherenkov radiation. This radiation can then be observed by a receiver. This problem investigates how ice can absorb and re-radiate the signal, potentially producting a problematic amount of noise. This phenomenon is known as volume scattering.
+
+A receiver placed in ice will receive a signal from a transmitter 100 meters away. The transmitter's signal will fall off as 1/r. If the source has some initial amplitude $A_0$, then the amplitude of the signal without any attenuation at a point S at distance $r_1$ will be $\frac{A_0}{r_1}$. Then, say that that point, the signal is scattered to the receiver an additional distance $r_2$ away. Following the above logic, the final signal received is then $A = \frac{A_0}{r_1r_2}$. However, there is one additional factor which has been neglected here, which is the phase. The amplitude of a wave at a point a distance $r$ from the receiver will be $\frac{A_0}{r}cos(kr)$, where $k$ is the wavenumber $\frac{2\pi}{\lambda}$. Here, the wavelength is chosen to be 1 meter.
+
+To find the total amplitude of the signal at the receiver, then one should integrate over the volume from the transmitter to the receiver plus a buffer zone of 10 meters. So, integrate over a sphere centered between the transmitter and receiver with a diameter of 120 meters. In this scenario, the differential volume element must be appreciably smaller than the wavelength so that the phase is the same within the region.
+
+The included notebook has code which sets up the problem and produces a plot of the amplitude observed by the receiver as a function of time after the initial signal is received.
